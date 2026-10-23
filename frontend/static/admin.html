@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin — BugFix Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="admin-body">
+  <header class="site-header admin-header"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M11 9 5 16l6 7M21 9l6 7-6 7M18 6l-4 20" /></svg></span><span class="brand-copy"><span class="brand-name">BugFix</span><span class="brand-subtitle">DEVELOPER</span></span></a><a href="/" class="text-link">← View public site</a></header>
+  <main class="admin-main container">
+    <section id="login-panel" class="login-panel">
+      <div class="eyebrow">PRIVATE WORKSPACE</div><h1>Admin <span class="gradient-text">sign in.</span></h1><p>Sign in to publish and manage your repair case studies.</p>
+      <form id="login-form" class="admin-form">
+        <label>Username<input name="username" autocomplete="username" required></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="button button-primary button-full" type="submit">Sign in →</button>
+        <p id="login-status" class="form-status" role="status"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="admin-title-row"><div><div class="eyebrow">CONTENT MANAGEMENT</div><h1>Your <span class="gradient-text">case studies.</span></h1><p>Publish the problem, explain the fix, and add screenshots.</p></div><button id="logout-button" class="button button-outline" type="button">Sign out</button></div>
+      <div class="admin-layout">
+        <form id="case-form" class="admin-form case-editor">
+          <div class="editor-heading"><h2 id="editor-title">Create a case study</h2><button id="reset-button" class="text-button" type="button">Clear form</button></div>
+          <input type="hidden" name="case_id" value="">
+          <label>Case study URL  *<input name="url" maxlength="120" required placeholder="e.g. www.learningTrading.com"></label>
+          <label>Case study title *<input name="title" maxlength="120" required placeholder="e.g. Fixed a failed API request"></label>
+          <label>Technology<input name="technology" maxlength="120" placeholder="e.g. React, FastAPI, PostgreSQL"></label>
+          <label>Short summary<input name="summary" maxlength="240" placeholder="One sentence describing the outcome"></label>
+          <label>What was the problem? *<textarea name="problem" rows="4" maxlength="5000" required placeholder="Describe the bug and its visible symptoms."></textarea></label>
+          <label>Diagnosis / root cause<textarea name="diagnosis" rows="4" maxlength="5000" placeholder="Explain how you found the cause."></textarea></label>
+          <label>How did you fix it? *<textarea name="solution" rows="5" maxlength="7000" required placeholder="Describe the code change or troubleshooting steps."></textarea></label>
+          <label>Result / verification<textarea name="result" rows="3" maxlength="2000" placeholder="How did you verify the fix?"></textarea></label>
+          <div class="upload-box"><label for="image-input">Bug screenshots (up to 6 images, max 5 MB each)</label><input id="image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple><p class="form-hint">Add images one at a time or in batches. After selecting them, write a separate explanation under each image. Remove passwords, tokens, customer data, and private URLs before uploading.</p><div id="image-preview" class="image-preview"></div></div>
+          <label class="checkbox-label"><input type="checkbox" name="published" checked> Publish on the public website</label>
+          <button class="button button-primary button-full" type="submit" id="save-button">Publish case →</button>
+          <p id="editor-status" class="form-status" role="status"></p>
+        </form>
+        <aside class="case-list-panel"><div class="editor-heading"><h2>Published & drafts</h2><span id="case-count" class="count-pill">0</span></div><div id="admin-case-list" class="admin-case-list"><p class="muted">Loading cases…</p></div></aside>
+      </div>
+    </section>
+  </main>
+  <script src="/static/admin.js" defer></script>
+</body>
+</html>

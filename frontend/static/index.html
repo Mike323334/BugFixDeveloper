@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional debugging and bug fixing for existing web applications, APIs, and backends.">
+  <title>BugFix Developer — We Fix What Others Built</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="BugFix Developer home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M11 9 5 16l6 7M21 9l6 7-6 7M18 6l-4 20" /></svg></span><span class="brand-copy"><span class="brand-name">BugFix</span><span class="brand-subtitle">DEVELOPER</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#services">Services</a><a href="#process">How it works</a><a href="#cases">Case studies</a>
+    </nav>
+    <a class="button button-small button-outline" href="#contact">Discuss a bug <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> DEBUGGING · REPAIR · IMPROVEMENT</div>
+        <h1>Your app is broken.<br><span class="gradient-text">Let's fix it.</span></h1>
+        <p class="hero-lead">I help businesses and developers find the cause of software bugs, repair broken features, and get existing applications working again.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#contact">Tell me what's broken <span aria-hidden="true">→</span></a><a class="text-link" href="#cases">Explore repair cases <span aria-hidden="true">↓</span></a></div>
+        <div class="trust-row"><div class="avatar-stack"><span>JS</span><span>API</span><span>DB</span></div><p><strong>Focused on the root cause</strong><br><span>Clear diagnosis. Practical fixes.</span></p></div>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of a code editor with a resolved error">
+        <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>debug-session.ts</span><span class="window-status"><span></span> fixed</span></div>
+        <div class="code-window">
+          <div class="code-line"><span class="line-no">01</span><span><b class="code-purple">async function</b> <b class="code-blue">loadDashboard</b>() {</span></div>
+          <div class="code-line error-line"><span class="line-no">02</span><span>&nbsp;&nbsp;<b class="code-red">const</b> data = <b class="code-red">await</b> fetchDashboard();</span></div>
+          <div class="code-line"><span class="line-no">03</span><span>&nbsp;&nbsp;<b class="code-purple">return</b> data.<b class="code-blue">results</b>;</span></div>
+          <div class="code-line"><span class="line-no">04</span><span>}</span></div>
+          <div class="diagnostic"><span class="diagnostic-icon">!</span><div><strong>TypeError: results is undefined</strong><small>Root cause identified · response shape mismatch</small></div></div>
+          <div class="code-line"><span class="line-no">05</span><span><b class="code-purple">const</b> data = <b class="code-purple">await</b> fetchDashboard();</span></div>
+          <div class="code-line success-line"><span class="line-no">06</span><span><b class="code-purple">return</b> data?.<b class="code-blue">results</b> ?? [];</span><span class="success-check">✓</span></div>
+          <div class="terminal"><span class="terminal-prompt">➜</span> npm test <span class="terminal-success">✓ all tests passed</span></div>
+        </div>
+        <div class="floating-badge"><span class="badge-check">✓</span><span><strong>Issue resolved</strong><small>Fix verified</small></span></div>
+      </div>
+    </section>
+
+    <section class="tech-strip"><div class="container tech-inner"><span>WORKING WITH</span><b>JavaScript</b><i></i><b>TypeScript</b><i></i><b>React</b><i></i><b>Vue</b><i></i><b>Node.js</b><i></i><b>Python</b><i></i><b>PostgreSQL</b></div></section>
+
+    <section class="section container" id="services">
+      <div class="section-heading"><div><div class="eyebrow">WHAT I CAN HELP WITH</div><h2>When software breaks,<br><span class="muted-heading">get back on track.</span></h2></div><p>Practical technical support for existing applications. I investigate the issue before recommending a fix.</p></div>
+      <div class="service-grid">
+        <article class="service-card"><div class="service-icon icon-red">⌁</div><h3>Bug fixing</h3><p>Unexpected errors, broken buttons, failing forms, and features that suddenly stop working.</p><span class="service-number">01 / DEBUG</span></article>
+        <article class="service-card"><div class="service-icon icon-blue">{ }</div><h3>Frontend repair</h3><p>React, Vue, JavaScript, and TypeScript issues affecting your user interface.</p><span class="service-number">02 / FRONTEND</span></article>
+        <article class="service-card"><div class="service-icon icon-purple">⌘</div><h3>API & backend</h3><p>Request failures, server errors, authentication problems, and integration bugs.</p><span class="service-number">03 / BACKEND</span></article>
+        <article class="service-card"><div class="service-icon icon-green">▤</div><h3>Database issues</h3><p>Problems with queries, data validation, database connections, and incorrect results.</p><span class="service-number">04 / DATA</span></article>
+        <article class="service-card"><div class="service-icon icon-yellow">↗</div><h3>Deployment repair</h3><p>Applications that work locally but fail after deployment or a configuration change.</p><span class="service-number">05 / DEPLOYMENT</span></article>
+        <article class="service-card"><div class="service-icon icon-teal">◴</div><h3>Performance review</h3><p>Investigate slow pages, repeated requests, and avoidable processing bottlenecks.</p><span class="service-number">06 / PERFORMANCE</span></article>
+      </div>
+    </section>
+
+    <section class="process-section" id="process"><div class="container">
+      <div class="eyebrow">A SIMPLE PROCESS</div><h2>From confusing error<br>to <span class="gradient-text">clear next steps.</span></h2>
+      <div class="process-grid">
+        <article><span class="step-number">01</span><h3>Explain the issue</h3><p>Share what is happening, what you expected, and any error message you have.</p></article>
+        <article><span class="step-number">02</span><h3>Find the cause</h3><p>I review the available evidence and define the likely cause and scope of work.</p></article>
+        <article><span class="step-number">03</span><h3>Apply the fix</h3><p>The agreed change is implemented and tested against the reported problem.</p></article>
+        <article><span class="step-number">04</span><h3>Explain the result</h3><p>You receive a summary of the issue, the change made, and any remaining risks.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section container" id="cases">
+      <div class="section-heading"><div><div class="eyebrow">REAL-WORLD DEBUGGING</div><h2>Repair notes &<br><span class="muted-heading">technical case studies.</span></h2></div><p>Examples of bugs, root-cause analysis, and the steps used to resolve them.</p></div>
+      <div id="case-grid" class="case-grid"><div class="loading-card"><span class="loader"></span> Loading case studies…</div></div>
+      <p id="case-empty" class="empty-state" hidden>No case studies published yet. Check back soon.</p>
+    </section>
+
+    <section class="contact-section" id="contact"><div class="container contact-layout">
+      <div><div class="eyebrow">LET'S TROUBLESHOOT</div><h2>Tell me what<br><span class="gradient-text">isn't working.</span></h2><p class="contact-copy">Describe the issue in plain language. You do not need to know the technical cause before reaching out.</p><div class="contact-note"><span>↳</span><p><strong>Helpful information</strong><br>What you expected, what happened instead, and the exact error message (if available).</p></div></div>
+      <form class="contact-form" id="contact-form">
+        <label>Your name<input name="name" autocomplete="name" maxlength="100" required placeholder="Your name"></label>
+        <label>Email address<input name="email" type="email" autocomplete="email" maxlength="200" required placeholder="you@example.com"></label>
+        <label>Technology (if known)<select name="technology"><option value="">Select a technology</option><option>React / JavaScript</option><option>Vue / TypeScript</option><option>Node.js / Express</option><option>Python / FastAPI</option><option>Database</option><option>Deployment / Hosting</option><option>Not sure</option><option>Other</option></select></label>
+        <label>What is going wrong?<textarea name="message" rows="5" maxlength="5000" required placeholder="Describe the issue and what you have already tried…"></textarea></label>
+        <p class="form-hint">This demo form opens your email app. It does not upload code or private files.</p>
+        <button class="button button-primary button-full" type="submit">Prepare message <span aria-hidden="true">→</span></button>
+        <p id="contact-status" class="form-status" role="status"></p>
+      </form>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M11 9 5 16l6 7M21 9l6 7-6 7M18 6l-4 20" /></svg></span><span class="brand-copy"><span class="brand-name">BugFix</span><span class="brand-subtitle">DEVELOPER</span></span></a><p>Fix the problem. Understand the cause. Move forward.</p><a href="/admin" class="admin-link">Admin</a><span class="copyright">© <span id="year"></span> BugFix Developer</span></div></footer>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
